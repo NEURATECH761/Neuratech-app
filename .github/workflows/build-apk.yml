@@ -11,12 +11,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ÉTAPE MODIFIÉE : Utilisation de la nouvelle action Flutter
+      # ÉTAPE MISE À JOUR : Passage à la version 2 de l'action
       - name: Set up Flutter
-        uses: flutter-actions/setup-flutter@v1
-        with:
-          channel: 'stable'
-          version: '3.x' # Demande la dernière version stable de la série 3.x
+        uses: flutter-actions/setup-flutter@v2
 
       - name: Get Flutter dependencies
         run: flutter pub get
@@ -29,3 +26,4 @@ jobs:
         with:
           name: app-release
           path: build/app/outputs/flutter-apk/app-release.apk
+          
